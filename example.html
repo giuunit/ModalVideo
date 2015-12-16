@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@CurrentPage.siteDescription">
+	<title>Modal Videos</title>
+	<link href="assets/bootstrap.custom.css" rel="stylesheet">
+	<link href="assets/modal-videos.css" rel="stylesheet">
+	<link href="example.css" rel="stylesheet">
+	
+</head>
+<body>
+	<div class="full">
+		<div class="header">
+			<h1>jQuery Modal Videos pluggin</h1>
+			<p class="sub-title">A lightweight solution to render modal videos in your site</p>
+		</div>
+		
+		<div class="main">
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Mp4 videos</h2>
+					<div>
+						<a href="http://www.w3schools.com/html/mov_bbb.mp4">
+							<img class="img-thumbnail" src="assets/videoIcon.png"/>
+						</a>
+						<p class="pushed"><a href="http://www.w3schools.com/html/mov_bbb.mp4">Example here</a></p>
+					</div>
+					
+				</div>
+				<div class="col-md-4">
+					<h2>Youtube videos</h2>
+					<div>
+						<a href="https://www.youtube.com/watch?v=YE7VzlLtp-4">
+							<img class="img-thumbnail" src="assets/videoIcon.png"/>
+						</a>
+						<p class="pushed"><a href="https://www.youtube.com/watch?v=YE7VzlLtp-4">Example here</a></p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h2>Get help</h2>
+					<div class="lateral-spaced">
+						<a href="mailto:giuliano.dore@gmail.com">Contact</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+				<h2>How to make it work ? </h2>
+				<p>Here is the javascript you can add to your page:</p>
+					<pre style='color:#000000;background:#f1f0f0;padding:10px;'>$<span style='color:#806030; '>(</span>document<span style='color:#806030; '>)</span><span style='color:#806030; '>.</span>ready<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>function</span><span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span>
+    <span style='color:#c34e00; '>//each video has need its own instance of modalVideoOptions  </span>
+    $<span style='color:#806030; '>(</span><span style='color:#800000; '>'</span><span style='color:#e60000; '>a[href]</span><span style='color:#800000; '>'</span><span style='color:#806030; '>)</span><span style='color:#806030; '>.</span>each<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>function</span><span style='color:#806030; '>(</span><span style='color:#806030; '>)</span> <span style='color:#806030; '>{</span>
+        $<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>this</span><span style='color:#806030; '>)</span><span style='color:#806030; '>.</span>modalvideo<span style='color:#806030; '>(</span><span style='color:#400000; font-weight:bold; '>new</span> ModalVideoOptions<span style='color:#806030; '>(</span><span style='color:#806030; '>)</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+    <span style='color:#806030; '>}</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+<span style='color:#806030; '>}</span><span style='color:#806030; '>)</span><span style='color:#806030; '>;</span>
+</pre>
+<p>You can also add parameters to your ModalVideoOptions object like events, more details in the modal-videos.js file</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="assets/modal-videos.js"></script>
+	
+	<script>
+		"use strict";
+
+		$(document).ready(function () {
+		
+			//each video has need its own instance of modalVideoOptions  
+			$('a[href]').each(function(){
+				$(this).modalvideo(new ModalVideoOptions());
+			});
+		});
+	</script>
+	
+</body>
+</html>
